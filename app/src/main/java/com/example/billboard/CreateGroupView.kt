@@ -20,7 +20,7 @@ import kotlinx.coroutines.CoroutineScope
 fun CreateGroupView( groupsVM: GroupsViewModel, navControl: NavController, scState: ScaffoldState, scope: CoroutineScope, userVM: UserViewModel) {
 
     Scaffold(
-        topBar = { TopBar(showMenu = true, scState, false, scope ) },
+        topBar = { TopBar(showMenu = false, scState, false, scope ) },
         content = { CreateGroupContent( groupsVM, navControl, userVM ) }
     )
 
@@ -56,7 +56,9 @@ fun CreateGroupContent( groupsVM: GroupsViewModel, navControl: NavController, us
                 textColor = MaterialTheme.colors.onPrimary,
                 focusedLabelColor = MaterialTheme.colors.onPrimary
             ),
-            modifier = Modifier.height(64.dp),
+            modifier = Modifier
+                .height(64.dp)
+                .fillMaxWidth(.75f),
             shape = MaterialTheme.shapes.large,
             textStyle = TextStyle(color = MaterialTheme.colors.onPrimary)
         )
@@ -74,7 +76,8 @@ fun CreateGroupContent( groupsVM: GroupsViewModel, navControl: NavController, us
                 .fillMaxWidth(.75f)
                 .height(40.dp),
             shape = MaterialTheme.shapes.large,
-            colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colors.onPrimary)
+            colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colors.onPrimary),
+            elevation = ButtonDefaults.elevation(7.dp, 5.dp, 0.dp)
         ) {
             Text(text = stringResource(R.string.create_group))
         }
@@ -92,7 +95,8 @@ fun CreateGroupContent( groupsVM: GroupsViewModel, navControl: NavController, us
                 .fillMaxWidth(.75f)
                 .height(40.dp),
             shape = MaterialTheme.shapes.large,
-            colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colors.onPrimary)
+            colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colors.onPrimary),
+            elevation = ButtonDefaults.elevation(7.dp, 5.dp, 0.dp)
         ) {
             Text(text = stringResource(R.string.cancel))
         }

@@ -343,6 +343,7 @@ fun SettingsContent( navControl: NavController, userVM: UserViewModel, scope: Co
 
                     ),
                     modifier = Modifier
+                        .fillMaxWidth(.75f)
                         .height(64.dp),
                     shape = MaterialTheme.shapes.large
                 )

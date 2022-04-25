@@ -12,6 +12,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -70,6 +71,18 @@ fun MainScreenContent( navControl: NavController, groups: List<GroupClass>) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top
         ) {
+            if (groups.isEmpty()) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth(.7f),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Spacer(modifier = Modifier.height(230.dp))
+                    Text(text = "Welcome to BillBoard", fontSize = 25.sp, textAlign = TextAlign.Center )
+                    Text(text = "Create a group from the button below and start tracking", fontSize = 18.sp, textAlign = TextAlign.Center )
+                }
+            }
 
             //Each group name is clickable and redirect to the corresponding group view
             groups.forEach { group ->

@@ -130,6 +130,7 @@ fun AddEditExpenseViewContent(
                     focusedLabelColor = MaterialTheme.colors.onPrimary
                 ),
                 modifier = Modifier
+                    .fillMaxWidth(.75f)
                     .height(64.dp)
                     .padding(0.dp),
                 shape = MaterialTheme.shapes.large
@@ -153,6 +154,7 @@ fun AddEditExpenseViewContent(
                     focusedLabelColor = MaterialTheme.colors.onPrimary
                 ),
                 modifier = Modifier
+                    .fillMaxWidth(.75f)
                     .height(64.dp)
                     .padding(0.dp),
                 shape = MaterialTheme.shapes.large
@@ -173,7 +175,8 @@ fun AddEditExpenseViewContent(
                         .fillMaxWidth(.75f)
                         .height(40.dp),
                     shape = MaterialTheme.shapes.large,
-                    colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colors.onPrimary)
+                    colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colors.onPrimary),
+                    elevation = ButtonDefaults.elevation(7.dp, 5.dp, 0.dp)
                 ) {
                     if (payerMember.isEmpty()){
                         payerButtonText = stringResource(R.string.select)

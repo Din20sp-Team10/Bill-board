@@ -344,7 +344,9 @@ fun AddEditMemberContent(
                         textColor = MaterialTheme.colors.onPrimary,
                         focusedLabelColor = MaterialTheme.colors.onPrimary
                     ),
-                    modifier = Modifier.height(64.dp),
+                    modifier = Modifier
+                        .fillMaxWidth(.75f)
+                        .height(64.dp),
                     shape = MaterialTheme.shapes.large,
                     textStyle = TextStyle(color = MaterialTheme.colors.onPrimary)
                 )
@@ -709,6 +711,7 @@ fun AddEditMemberContent(
                     focusedLabelColor = MaterialTheme.colors.onPrimary
                 ),
                 modifier = Modifier
+                    .fillMaxWidth(.75f)
                     .height(64.dp),
                 shape = MaterialTheme.shapes.large
             )
@@ -746,6 +749,7 @@ fun AddEditMemberContent(
             OutlinedButton(
                 onClick = {
                     boolEdit.value = false
+                    memberEmail = ""
                 },
                 modifier = Modifier
                     .fillMaxWidth(.75f)
